@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GOVARDHAN LIFT - Carrd Mock-up</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CORE COLOR PALETTE - Derived from image_1.png */
+        :root {
+            /* Backgrounds (Dark Storm Grey) */
+            --bg-storm-dark: #0A0A0A; /* Darkest areas of the storm */
+            --bg-storm-light: #161616; /* Slightly lighter container areas */
+            
+            /* Text (Lush Nature Green and Standard White) */
+            --text-main: #FFFFFF;
+            --text-nature-green: #37A23C; /* Green taken from the floating terrarium */
+            --text-grey-muted: #888888;
+            
+            /* Active Accents (Vibrating Violet Levitation) */
+            --violet-energy: #A93FE1; /* Primary color of the plasma tethers */
+            
+            /* Highlighting/Hope (The Golden Dawn break) */
+            --amber-highlight: #F5B935; /* Gold taken from the top center sky */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-storm-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Standard Carrd Page Wrapper */
+        .carrd-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 1. HERO SECTION (Image + Title) */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh; /* Takes up most of the initial screen */
+            text-align: center;
+            border-bottom: 2px solid #222; /* Subtle visual separator */
+        }
+
+        /* This is where image_1.png goes in Carrd */
+        .hero-image-block {
+            max-width: 900px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 50px rgba(169, 63, 225, 0.2); /* Soft violet energy halo */
+        }
+
+        .hero-image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .hero h1 {
+            font-weight: 800;
+            font-size: 4rem;
+            margin: 0 0 10px 0;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span.highlight {
+            color: var(--amber-highlight); /* Highlight color */
+        }
+
+        .hero p.sub-headline {
+            font-weight: 400;
+            font-size: 1.5rem;
+            color: var(--text-grey-muted);
+            margin: 0;
+            max-width: 600px;
+        }
+
+        /* 2. THE VISION SECTION */
+        .vision {
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .vision h2 {
+            font-weight: 800;
+            font-size: 3rem;
+            margin: 0 0 30px 0;
+            color: var(--text-main);
+        }
+
+        .vision h2 span.nature {
+            color: var(--text-nature-green); /* Nature green */
+        }
+
+        .vision p.logline {
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: var(--violet-energy); /* Active energy violet */
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            line-height: 1.3;
+        }
+
+        .vision p.body-text {
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: var(--text-grey-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 3. HARD SCIENCE SECTION */
+        .science {
+            padding: 100px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .science-text h3 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin: 0 0 20px 0;
+        }
+
+        .science-text p {
+            font-size: 1.1rem;
+            color: var(--text-grey-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Simulates an advanced component description block */
+        .technical-specs {
+            background-color: var(--bg-storm-light);
+            border: 1px solid #222;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .technical-specs h4 {
+            color: var(--violet-energy);
+            margin-top: 0;
+        }
+
+        .technical-specs ul {
+            list-style: none;
+            padding: 0;
+            color: var(--text-main);
+        }
+
+        .technical-specs ul li {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .technical-specs ul li span.label {
+            color: var(--text-grey-muted);
+            font-weight: 600;
+            display: block;
+        }
+
+        /* 4. THE TEAM & PIPELINE SECTION */
+        .team {
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .team h2 {
+            font-weight: 800;
+            font-size: 3rem;
+            margin: 0 0 60px 0;
+        }
+
+        /* Simulates the standard Carrd "Container" grid layout */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background-color: var(--bg-storm-light);
+            padding: 40px;
+            border: 1px solid #222;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .team-member h4 {
+            color: var(--amber-highlight);
+            font-size: 1.3rem;
+            margin: 0 0 5px 0;
+        }
+
+        .team-member p.role {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 0 0 15px 0;
+        }
+
+        .team-member p.bio {
+            font-size: 1rem;
+            color: var(--text-grey-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Simplified Icon Link Block for GitHub */
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-grey-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .github-link:hover {
+            color: var(--text-main);
+            background-color: #222;
+        }
+
+        /* 5. FOOTER & CALL TO ACTION */
+        .footer {
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--text-grey-muted);
+            font-size: 0.9rem;
+        }
+
+        .cta-box {
+            background-color: var(--bg-storm-light);
+            border: 2px dashed #333; /* Indicates it's in development */
+            max-width: 500px;
+            margin: 0 auto 30px auto;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .cta-box p {
+            color: var(--violet-energy);
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carrd-page">
+
+        <div class="hero">
+            <div class="hero-image-block">
+                <img src="first-concept-art.jpeg" alt="A floating mountain terrarium anchored by violet energy tethers and lightning.">
+            </div>
+            
+            <h1>THE <span class="highlight">GOVARDHAN</span> LIFT</h1>
+            <p class="sub-headline">An original sci-fi feature in development for the Future Vision XPRIZE.</p>
+        </div>
+
+        <div class="vision">
+            <h2>Surviving the <span class="nature">Deluge</span>. Earning the Utopia.</h2>
+            <p class="logline">When catastrophic floods threaten to drown Northeast India, a resilient community must harness the storm's apocalyptic lightning, powering an untested diamond anti-gravity matrix to tear their homeland from the earth and levitate it to safety.</p>
+            
+            <p class="body-text">We are moving away from the dystopian exhaustion of modern sci-fi. <em>The Govardhan Lift</em> is a story of extreme grit and decentralized collaboration. It is not about a lone genius saving the world; it is about thousands of people working shoulder-to-shoulder in the freezing rain to engineer an ark. We are transforming a mass extinction event into the birth of a regenerative, Solarpunk future.</p>
+        </div>
+
+        <div class="science">
+            <div class="science-text">
+                <h3>Grounded in Reality.</h3>
+                <p>The fantastical elements of our world are strictly anchored in theoretical physics and materials science. We explore planetary-scale atmospheric harvesting, manipulating the global electric circuit via carbon-nanotube tethers, and utilizing macroscopic Quantum Flux Pinning within a massive Lonsdaleite matrix.</p>
+            </div>
+            
+            <div class="technical-specs">
+                <h4>System Architecture Profile</h4>
+                <ul>
+                    <li><span class="label">Power Source:</span> Superconducting Lonsdaleite (Boron-Doped Hexagonal Diamond) Matrix.</li>
+                    <li><span class="label">Stabilization:</span> Microscopic Quantum Flux Pinning via Nitrogen-Vacancy Defects.</li>
+                    <li><span class="label">Levitation Mechanism:</span> Macroscopic Meissner Effect triggering infinite potential atmospheric induction coils.</li>
+                </ul>
+            </div>
+        </div>
+
+       <div class="team">
+            <h2>The Production Pipeline</h2>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Manav Bandhania</h4>
+                    <p class="role">Co-Writer, Co-Director & Worldbuilder</p>
+                    <p class="bio">Drives the overarching narrative architecture and hard-science lore. Responsible for conceptualizing the physical mechanics of the Solarpunk future and translating complex planetary physics into character-driven storytelling. Manages the project's digital generation workflows, leveraging a background in computer engineering and system architecture to design the complex AI prompt-logic required to build the world.</p>
+                    
+     
+                </div>
+                
+                <div class="team-member">
+                    <h4>Jayaditya Sisodiya</h4>
+                    <p class="role">Co-Writer, Co-Director & Cinematographer</p>
+                    <p class="bio">Drives the visual storytelling, framing, and cinematic composition. Responsible for establishing the distinct visual language of the film. Directs dynamic camera movements and lighting cues within the AI-generated environments, overseeing look-development and the final editorial pacing to capture the massive, apocalyptic scale of the cataclysm.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="cta-box">
+                <p>STATUS: IN DEVELOPMENT</p>
+                Target Trailer Completion: August 2026.
+            </div>
+            
+            This page represents the 2-person development team for the Future Vision XPRIZE.
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+```
